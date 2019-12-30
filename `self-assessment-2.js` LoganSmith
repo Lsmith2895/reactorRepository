@@ -1,0 +1,43 @@
+------------------------exc 1--------------------
+function countInstancesOf(letter, sentence) {
+  var count = 0;
+  var sentenceArr = sentence.split('');
+  for ( var i = 0; i < sentenceArr.length; i++ ){
+    if( sentence[i] === letter ){
+      count += 1;
+    }
+  }
+  return count;
+}
+
+-----------------exc 2-------------------
+//make string begin with capital followed by all lower case
+function titleCase(str) {
+  //sep string into an array of individual strings
+  var stringArr = str.split(' ');
+    //it over array
+    for (var i = 0; i < stringArr.length; i++){
+      //split string into individual arrays
+      var splitIndividualString = stringArr[i].split('');
+        for (var j = 0; j < splitIndividualString.length; j++){
+        //at index 0 make upercase 
+         if(j === 0){
+          splitIndividualString.splice(0, 1, splitIndividualString[j].toUpperCase());
+          //at 1 - length make lower case
+        } else {
+          splitIndividualString.splice(j, 1, splitIndividualString[j].toLowerCase())
+        }
+        //add letters into strings then into senctences
+      }
+      var newString = '';
+      newString += splitIndividualString.join('')
+      
+    }
+    console.log(newString)
+  //return new string
+  // return stringArr;
+}
+
+// titleCase('peter piper'); //"Peter Piper"
+titleCase('teXt mEssAge'); //"Text Message"
+// titleCase('more to me than meets the eye'); //"More To Me Than Meets The Eye"
